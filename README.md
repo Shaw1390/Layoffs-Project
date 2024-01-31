@@ -29,13 +29,14 @@ This project's data was obtained from the Kaggle Layoffs Dataset and it encompas
 
 ## Analysis List
 
-1.	Company Analysis
+1.	Industry Analysis
+   
+> The objective of this analysis is to find which Industry had the most number of layoffs after the Covid-19 pandemic.
+
+2.	Company Analysis
 
 > Perform an analysis on the data to gain insights into different companies, determine the company which laid off most employees.
 
-2.	Industry Analysis
-   
-> The objective of this analysis is to find which Industry had the most number of layoffs after the Covid-19 pandemic.
 
 3.	Country Analysis
 
@@ -59,7 +60,7 @@ During this initial phase, the data is examined to detect any NULL or missing va
 Conducting exploratory data analysis is essential to address the project's listed questions and objectives.
 
 ## Questions I wanted to answer from this dataset
-- Total Number of employees laid off in the past 4 years
+### Total Number of employees laid off in the past 4 years
 ```mysql
 Select sum(total_laid_off) as Total_Layoffs
 from layoffs
@@ -70,6 +71,7 @@ Result:
 
 In the last 4 years a total of 53,0058 employees have been laid off with the xyz year having the most number at xyz laidoff.
 
+### Industry Analysis
 - Top 5 industries that had the most number of layoffs
 
 ```mysql
@@ -107,5 +109,50 @@ Result:
 
 After the pandemic, travel and transportion has recovered considerably. But Retail and consumer industries hired more employees during the pandemic due to increase of demand by the consumer.
 
+### Company Analysis
+- Top 5 companies that laid off the most employees
+
+```mysql
+select company, sum(total_laid_off) as Layoff_count
+from layoffs
+order by Layoff_count desc
+```
+
+Result:
+
+- Top 5 companies that laid most employees during pandemic
+
+```mysql
+select company, sum(total_laid_off) as Layoff_count
+from layoffs
+where date between '2020-01-01 00:00:00.000' and '2022-12-31 00:00:00.000'
+group by company
+order by Layoff_count desc
+```
+
+Result:
+
+Uber and Booking.com are the companies that laidoff most the emoloyees during the pandemic. This is due to the fact during the lockdown the travel and transportation industry hit the highest.
+
+
+- Top 5 companies that laid off the most employees post pandemic
+
+```mysql
+select company, sum(total_laid_off) as Layoff_count
+from layoffs
+where date between '2023-01-01 00:00:00.000' and '2024-12-31 00:00:00.000'
+group by company
+order by Layoff_count desc
+```
+
+Result:
+
+Tech companies Amazon and Meta has laid off the most employees post pandemic. This is because during the pandemic these companies had mass hiring due to low federal bank interest rate. 
+
+- Comapnies that had multiple layoff rounds
+
+```mysql
+```
+Result:
 
 
