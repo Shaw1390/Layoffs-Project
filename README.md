@@ -67,7 +67,7 @@ from layoffs
 ```
 Result:
 
-![Q2](https://i.ibb.co/7V55GTW)
+![Q2](https://github.com/Shaw1390/Layoffs-Project/blob/main/Screenshot%202024-01-31%20213003.png)
 
 In the last 4 years a total of 53,0058 employees have been laid off with the xyz year having the most number at xyz laidoff.
 
