@@ -58,3 +58,54 @@ During this initial phase, the data is examined to detect any NULL or missing va
 
 Conducting exploratory data analysis is essential to address the project's listed questions and objectives.
 
+## Questions I wanted to answer from this dataset
+- Total Number of employees laid off in the past 4 years
+```mysql
+Select sum(total_laid_off) as Total_Layoffs
+from layoffs
+```
+Result:
+
+/image
+
+In the last 4 years a total of 53,0058 employees have been laid off with the xyz year having the most number at xyz laidoff.
+
+- Top 5 industries that had the most number of layoffs
+
+```mysql
+select top (5) country , sum(total_laid_off) as Layoff_Count 
+from layoffs
+group by country
+order by Layoff_Count desc
+```
+Result:
+
+Retail and Consumer industries faced the most number of layoffs being as close to 62,000 employees being laid off. They contribute to 12% of the total value.
+
+- Top 5 industries that had the most number of layoffs during peak pandemic (2020 to 2021)
+```mysql
+select industry, sum(total_laid_off) as Layoff_count
+from layoffs
+where date between '2020-01-01 00:00:00.000' and '2021-12-31 00:00:00.000'
+group by industry
+order by Layoff_count desc
+```
+Result: 
+
+Due to the Covid 19 pandemic and a global lockdown Transport and Travel industries faced the most layoffs as they faced major losses. 
+
+- Top 5 industries that had the most number of layoffs during post pandemic (2022 to 2024)
+
+```mysql
+select industry, sum(total_laid_off) as Layoff_count
+from layoffs
+where date between '2023-01-01 00:00:00.000' and '2024-12-31 00:00:00.000'
+group by industry
+order by Layoff_count desc
+```
+Result:
+
+After the pandemic, travel and transportion has recovered considerably. But Retail and consumer industries hired more employees during the pandemic due to increase of demand by the consumer.
+
+
+
