@@ -2,6 +2,8 @@
 
 # Layoffs Exploratory Data Analysis using SQL and PowerBI
 
+![Snap_2](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Layoffs_page-0001.jpg)
+
 ### Dashboard Link : 
 
 ## Problem Statement
@@ -67,9 +69,9 @@ from layoffs
 ```
 Result:
 
-![Q2](https://github.com/Shaw1390/Layoffs-Project/blob/main/Screenshot%202024-01-31%20213003.png)
+![Q2](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-01-31%20213003.png)
 
-In the last 4 years a total of 53,0058 employees have been laid off with the xyz year having the most number at xyz laidoff.
+In the last 4 years a total of 53,0058 employees have been laid off with the 2023 year having the most number at 262862 epmployees that were laid-off.
 
 ### Industry Analysis
 - Top 5 industries that had the most number of layoffs
