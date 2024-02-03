@@ -84,6 +84,7 @@ order by Layoff_Count desc
 ```
 Result:
 
+![Q2](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20105528.png)
 Retail and Consumer industries faced the most number of layoffs being as close to 62,000 employees being laid off. They contribute to 12% of the total value.
 
 - Top 5 industries that had the most number of layoffs during peak pandemic (2020 to 2021)
@@ -95,6 +96,8 @@ group by industry
 order by Layoff_count desc
 ```
 Result: 
+
+![Q3](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20105735.png)
 
 Due to the Covid 19 pandemic and a global lockdown Transport and Travel industries faced the most layoffs as they faced major losses. 
 
@@ -109,6 +112,8 @@ order by Layoff_count desc
 ```
 Result:
 
+![Q4](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20111905.png)
+
 After the pandemic, travel and transportion has recovered considerably. But Retail and consumer industries hired more employees during the pandemic due to increase of demand by the consumer.
 
 ### Company Analysis
@@ -122,6 +127,8 @@ order by Layoff_count desc
 
 Result:
 
+![Q5](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20112304.png)
+
 - Top 5 companies that laid most employees during pandemic
 
 ```mysql
@@ -134,7 +141,9 @@ order by Layoff_count desc
 
 Result:
 
-Uber and Booking.com are the companies that laidoff most the emoloyees during the pandemic. This is due to the fact during the lockdown the travel and transportation industry hit the highest.
+![Q6](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20112304.png)
+
+Uber and Booking.com are the companies that laidoff most the emoloyees during the pandemic. This is due to the fact during the lockdown the travel and transportation industry were hit with the most loss.
 
 
 - Top 5 companies that laid off the most employees post pandemic
@@ -149,9 +158,11 @@ order by Layoff_count desc
 
 Result:
 
+![Q8](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20112625.png)
+
 Tech companies Amazon and Meta has laid off the most employees post pandemic. This is because during the pandemic these companies had mass hiring due to low federal bank interest rate. 
 
-- Comapnies that had multiple layoff rounds
+- Companies that had multiple layoff rounds
 
 ```mysql
 ```
