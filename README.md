@@ -8,7 +8,7 @@
 
 ## Problem Statement
 
-We are analysing Layoffs data to identify which countries, industries and locations had the most number of layoffs after Covid pandemic. The dataset utilized in this project is sourced from the Kaggle Layoffs Dataset.
+We are analysing Layoffs data to identify which countries, industries and locations had the most number of layoffs during and afther the Covid pandemic. The dataset utilized in this project is sourced from the Kaggle Layoffs Dataset.
 
 ## Purpose of the Project
 The main goal of this project is to gain understanding from Layoffs dataset, exploring the various industries and timelines that influence layoffs across different countries.
@@ -71,7 +71,7 @@ Result:
 
 ![Q2](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-01-31%20213003.png)
 
-In the last 4 years a total of 53,0058 employees have been laid off with the 2023 year having the most number at 262862 epmployees that were laid-off.
+In the last 4 years a total of 530,058 employees have been laid off with the 2023 year having the most number at 262862 epmployees that were laid-off.
 
 ### Industry Analysis
 - Top 5 industries that had the most number of layoffs
@@ -85,9 +85,11 @@ order by Layoff_Count desc
 Result:
 
 ![Q2](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20105528.png)
+
 Retail and Consumer industries faced the most number of layoffs being as close to 62,000 employees being laid off. They contribute to 12% of the total value.
 
 - Top 5 industries that had the most number of layoffs during peak pandemic (2020 to 2021)
+
 ```mysql
 select industry, sum(total_laid_off) as Layoff_count
 from layoffs
@@ -165,7 +167,123 @@ Tech companies Amazon and Meta has laid off the most employees post pandemic. Th
 - Companies that had multiple layoff rounds
 
 ```mysql
+select company, count (*) as Rounds
+from layoffs
+group by company
+having count (*) >1
+order by Rounds desc
 ```
 Result:
 
+![Q10](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20114631.png)
 
+Tech companies had multiple rounds of layoffs in the mast 4 years.
+
+### Country Analysis
+
+- Countries that had most number of layoffs
+
+```mysql
+select top (5) country , sum(total_laid_off) as Layoff_Count 
+from layoffs
+group by country
+order by Layoff_Count desc
+```
+Result:
+
+![Q11](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20121335.png)
+
+United states has the most number of layoffs at staggering 354,157 employees. Thats 66% of the total layoffs. India comes secomd woth 47,759 employees with a 9% share. United States and India together contributes of 75% of the layoffs in the world. 
+
+- Location in United States with maximum layoffs
+
+```mysql
+select location, sum(total_laid_off) as Layoff_Count
+from layoffs
+where country='United States'
+group by location
+order by Layoff_Count desc
+```
+Result:
+
+![Q12](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20124143.png)
+
+Major tech cities like Bay Area and Seattle had faced major layoffs. 
+
+- Location in India with maximum layoffs
+
+```mysql
+select location, sum(total_laid_off) as Layoff_Count
+from layoffs
+where country='India'
+group by location
+order by Layoff_Count desc
+```
+Result:
+
+![Q13](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20125205.png)
+
+'Silicon Valley of India'- Bangalore faced the most layoffs at 27,237 contributing close 60% of total India's layoffs.
+
+- Location in except United states and India with maximum layoffs
+
+```mysql
+select location, sum(total_laid_off) as Layoff_Count
+from layoffs
+where country !='India' and country != 'United States'
+group by location
+order by Layoff_Count desc
+```
+Result:
+
+![Q13](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20125527.png)
+
+For remaining countries their respective capitals had the majot layoffs. But unlike United States and India each country only had one city that were affected.
+
+### Stage Analysis
+
+- Number of layoffs in different stages
+
+```mysql
+--Top 5 companies with most layoffs
+select top (5) company , sum(total_laid_off) as Layoff_Count 
+from layoffs
+group by company
+order by Layoff_Count desc
+```
+
+Result:
+![Q13](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20130829.png)
+
+Majority of the comany were in Post-IPO stage when they laidoff the employees. 
+
+- Number of layoffs in Covid
+```mysql
+select stage, sum (total_laid_off) as Layoff_count
+from layoffs
+where date between '2020-01-01 00:00:00.000' and '2021-12-31 00:00:00.000'
+group by stage
+order by layoff_count desc
+```
+Result:
+
+![Q13](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20131454.png)
+
+- Number of layoffs in post Covid
+```mysql
+select stage, sum (total_laid_off) as Layoff_count
+from layoffs
+where date between '2022-01-01 00:00:00.000' and '2024-12-31 00:00:00.000'
+group by stage
+order by layoff_count desc
+```
+
+Result: ![Q13](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20132332.png)
+
+Irrespective of the pandemic Post-IPO companies had the most loyoffs.
+
+# Conclusion
+
+After performing Exploratory Data Analysis on Layoffs dataset it is evident that Tech companies in the world has laidoff most number of the employees post pandemic. During the pandemic as the interest rates were very low these companies mass hired thousands of employees. Once the pandemic was over, the federal intereset rates were increased to stablize the economy. This caused many of the companies to reduce their workforce as their profits remaind the same but expenditure increased. 
+
+Industries like Legal, Manufacturing and Energy had the least number of layoffs during the pandemic and post pandemic as these are some of the most neccessary industry and will always be in demand.
