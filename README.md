@@ -280,7 +280,9 @@ group by stage
 order by layoff_count desc
 ```
 
-Result: ![Q13](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20132332.png)
+Result: 
+
+![Q13](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20132332.png)
 
 Irrespective of the pandemic Post-IPO companies had the most loyoffs.
 
