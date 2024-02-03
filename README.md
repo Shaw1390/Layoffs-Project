@@ -8,7 +8,7 @@
 
 ## Problem Statement
 
-We are analysing Layoffs data to identify which countries, industries and locations had the most number of layoffs during and afther the Covid pandemic. The dataset utilized in this project is sourced from the Kaggle Layoffs Dataset.
+We are analysing Layoffs data to identify which countries, industries and locations had the most number of layoffs after Covid pandemic. The dataset utilized in this project is sourced from the Kaggle Layoffs Dataset.
 
 ## Purpose of the Project
 The main goal of this project is to gain understanding from Layoffs dataset, exploring the various industries and timelines that influence layoffs across different countries.
@@ -234,6 +234,7 @@ where country !='India' and country != 'United States'
 group by location
 order by Layoff_Count desc
 ```
+
 Result:
 
 ![Q13](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20125527.png)
@@ -265,6 +266,7 @@ where date between '2020-01-01 00:00:00.000' and '2021-12-31 00:00:00.000'
 group by stage
 order by layoff_count desc
 ```
+
 Result:
 
 ![Q13](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Screenshot%202024-02-03%20131454.png)
