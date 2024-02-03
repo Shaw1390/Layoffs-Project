@@ -4,7 +4,7 @@
 
 ![Snap_2](https://github.com/Shaw1390/Layoffs-Project/blob/main/Images/Layoffs_page-0001.jpg)
 
-### Dashboard Link : 
+### Dashboard Link : https://app.powerbi.com/links/jbWM2cSU6v?ctid=d0be5b41-bbc7-46dd-87f9-beac47265f74&pbi_source=linkShare
 
 ## Problem Statement
 
